@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="JavaScript" type="text/javascript">
+
+
+            function getBd()
+            {
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("post", 'bd.json', true);
+                xmlhttp.send(null);
+                xmlhttp.onreadystatechange = display;
+            }
+
+            function display()
+            {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
+                {
+                    var objs = JSON.parse(xmlhttp.responseText),
+                        rows = "<table><th><td>Nom</td><td>Titre</td><td>Annee</td></tr>";
+
+                    for (i = 0; i < objs.length; i++) {
+                        var obj = objs[i];
+                        rows += "<tr><td>" + obj.name + "</td><td>" + obj.titre + "</td><td>" + obj.annee + "</td></tr>";
+                    }
+                    rows += "</table>";
+                    document.getElementById("result").innerHTML = rows;
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function (event) {
+                document.getElementById("start").addEventListener("click", getBd)
+            });
+
+        </script>
+
+    </head>
+    <body>
+        <input type="button" id="start" name="start" value="START"/>
+        <div id="result"></div>
+    </body>
+</html>
