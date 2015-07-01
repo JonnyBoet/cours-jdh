@@ -1,0 +1,63 @@
+<html>
+	<head>
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+            <title>Recherche</title>
+            <style type="text/css" media="screen">
+                    @import url("lib/style.css");
+            </style>
+            <script language="javascript" type="text/javascript" src="lib/affiche.js"></script>
+            <script language="javascript" type="text/javascript" src="lib/menu.js"></script>
+            <script language="javascript" type="text/javascript" src="lib/toolkit.js"></script>
+            <script language="javascript" type="text/javascript" src="lib/bd.js"></script>
+	</head>
+        <body onload="initRecherche()">
+
+                <script language="javascipt" type="text/javascript" >
+                    document.write(afficheTout("recherche.htm"));
+                </script>
+                <div id="blockRecherche">
+                    <input id="txtRecherche" type="text" />
+                    <input id="rechercher" type="button" value="Recercher" />
+                </div>
+		<div id="blockDroit">
+                    
+                    
+                    
+                    <script language="javascript" type="text/javascript">
+                        
+                        /* 
+                        var fiche1 = new ficheBd(1,"Lucky Luke","Uderzo","19 mai 2015","c'est bien !",15,100);
+                        fiche1.destocker(10);
+                        document.write(fiche1.toString());
+                        fiche1.stocker(2);
+                        document.write(fiche1.toString());
+                        
+                        var fiche2 = new ficheBd(2,"Tintin au tibet","Gosciny","24 juin 1994","c'est froid !",15,100);
+                        document.write(fiche2.toString());
+                        */
+                        
+                        var monStock = new stockBd();
+                        monStock.ajouter(1,"Lucky Luke -Ma Dalton","Morris/Goscinny","1971","cool",50,10);
+                        monStock.ajouter(2,"Lucky Luke -Les Dalton se rachetent","Morris/Goscinny","1965","ok",75,15);
+                        monStock.ajouter(3,"Lucky Luke - Le cuisinier français","Morris/Guylouis","2003","ok",20,50);
+                        monStock.ajouter(4,"Astérix le gaulois","Uderzo/Goscinny","1961","ok",1000,1);
+                        monStock.ajouter(5,"Astérix et les Goths","Uderzo/Goscinny","1963","ok",900,0);
+                        monStock.ajouter(6,"Tanguy et Laverdure à L'ecole","Uderzo/Charlier","1996","ok",15,4);
+                        monStock.ajouter(8,"Largo Winch - La voie et la vertu","Van Hamme/Francq","2008","ok",25,50);
+                        monStock.ajouter(7,"Blueberry - La tribu fantome","Giraud/Charlier","1982","ok",5,2);
+                        
+                        monStock.destocker(1,3);
+                        monStock.stocker(5,2);
+                        document.write(monStock.toString());
+                        
+                    </script>
+                    
+                    <script language="javascript" type="text/javascript">
+                        document.write(print_r(pagesDisponibles));
+                    </script>
+                </div>
+		<script language="javascipt" type="text/javascript" >
+                    document.write(affichePagePied());
+                </script>
+	</body>
+</html>
