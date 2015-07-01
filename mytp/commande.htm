@@ -11,19 +11,19 @@
             <script language="javascript" type="text/javascript" src="lib/bd.js"></script>
             <script language="javascript" type="text/javascript" src="lib/commande.js"></script>
 	</head>
-        <body onload="initCommande();">
+        <body onload="ajaxsearch.init();">
 
                 <script language="javascipt" type="text/javascript" >
                     document.write(afficheTout("commande.htm"));
                 </script>
-                <div id="blockRecherche">
-                    <textarea id="txtArea" rows="3" cols="100"></textarea>
+                <div id="blockCommande">
+                    <input id="ajaxsearchQuery" name="ajaxsearchQuery" type="text" value="Vide" />
                     <br />
-                    <input id="valider" type="button" value="Valider" />
+                    <input id="ajaxsearchBtn" type="button" value="Valider"/>
                 </div>
 		<div id="blockDroit">
                     
-                    <div id="voirtxt">                     
+                    <div id="ajaxsearchResult">                     
                     </div>
 
                 </div>

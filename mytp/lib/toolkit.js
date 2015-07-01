@@ -35,3 +35,31 @@
 		}
 		return dumped_text;
 	} 
+        
+        var ajaxsearch = {
+            init: function(){
+                ajaxsearch.qElem = document.getElementById('ajaxsearchQuery');
+                ajaxsearch.bElem = document.getElementById('ajaxsearchBtn');
+                ajaxsearch.rElem = document.getElementById('ajaxsearchResult');
+                ajaxsearch.bElem.addEventListener("click",ajaxsearch.search);
+            },
+            search : function(){
+                ajaxsearch.xmlhttp = new XMLHttpRequest();
+                ajaxsearch.xmlhttp.open("GET","lib/bd.json",true);
+                ajaxsearch.xmlhttp.send(ajaxsearch.qElem.value);
+                ajaxsearch.xmlhttp.onreadystatechange = ajaxsearch.response;
+            },
+            response : function(){
+                if (ajaxsearch.xmlhttp.readyState == 4){
+                    if (ajaxsearch.xmlhttp.status == 200){
+                        retour = "<u>";
+                        reponse = JSON.parse(ajaxsearch.xmlhttp.responseText);
+                        for (i=0;i<reponse.length;i++){
+                            retour += "<li>" + reponse[i].name + " de " + reponse[i].auteur +"</li>";
+                        }
+                        ajaxsearch.rElem.innerHTML = retour + "</u>";
+                    }
+                }
+            }
+        };
+        
