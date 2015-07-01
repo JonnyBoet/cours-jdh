@@ -1,0 +1,33 @@
+Faire une requete ajax vers un fichier JSON et afficher le résultat
+
+
+Pour cela, vous allez devoir réaliser les étapes suivantes :
+    - Dans le fichier commande.htm
+	- créer un champ texte avec l'id "ajaxsearchQuery" (+ attribut type,value,name définie)
+	- créer un bouton avec l'id "ajaxsearchBtn" (+ attribut type,value,name définie)
+	- créer une div avec l'id "ajaxsearchResult"
+	
+    - A coté du fichier commande.js, créer un fichier bd.json. La structure de ce fichier doit etre un tableau d'objets représentant nos bd
+
+    - Dans le fichier toolkit.js
+	- Créer une variable ajaxsearch de type objet (notation raccourcie)
+        - Dans cet objet, créer une méthode init. Cette méthode devra ajouter 3 propriétés statiques 
+          à notre objet ajaxsearch (par ex qElem, bElem et rElem) pointant vers les 3 éléments du DOM 
+          que nous avons créer pour cet exercice dans la page HTML (ajaxsearchQuery,ajaxsearchBtn et 
+          ajaxsearchResult) Vous devez utiliser document.getElementById pour ca
+	- La methode init devra finir en associant la methode ajaxsearch.search à l'évènement click du bouton 
+          (utilisez votre variable ajaxsearch.qElem). 
+	- Dans l'objet ajaxsearch, créer la methode search qui devra créer un object xmlhttpequest pour :
+            - Ouvrir la connection vers "./bd.json", avec la methode GET et asynchrone
+            - Envoyer le contenu de la recherche saisie par l'internaute via le champ input ajaxsearchQuery
+            - associez la methode statique ajaxsearch.response au readystatechange de notre object xmlhttprequest
+        - Dans l'objet ajaxsearch, créer la methode response qui doit servir a recevoir la réponse à notre requête ajax
+            - Controller que la réponse a le bon etat state (4)
+            - Controller que la réponse a le bon status (200)
+            - Parser la réponse avec JSON.parse()
+            - Faire une blouche sur le tableau de réponse, et générer une liste HTML (<ul><li>) des résultats. L'afficher dans la 
+              div ajaxsearchResult
+            
+
+
+

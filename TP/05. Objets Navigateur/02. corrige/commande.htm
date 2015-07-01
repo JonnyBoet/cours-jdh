@@ -1,88 +1,78 @@
 <html>
-	<head>
-		<title>Recherche</title>
-		<script language="javascript" type="text/javascript" src="lib/toolkit.js">
-		</script>
-		<script language="javascript" type="text/javascript" src="lib/affiche.js">
-		</script>
-		<script language="javascript" type="text/javascript" src="lib/menu.js">
-		</script>
-		<script language="javascript" type="text/javascript" src="lib/commande.js">
-		</script>
-		<style type="text/css" media="screen">
-			@import url("lib/style.css");
-		</style>
-	</head>
-	<body>
-		<script language="javascript" type="text/javascript">
-			affichePageBandeauHaut();
-			affichePageMenu("commande.htm");
-			affichePageTitre("commande.htm");
-			affichePagePied();
-		</script>
-		<div id="blockDroit">
-			<form>
-				<label style="width:150px;display:block;float:left">Date de commande :</label>
-					<script language="javascript" type="text/javascript">
-						document.write(new Date().toLocaleString());
-					</script>
-				<br/>
-				<label style="width:150px;display:block;float:left">Adresse IP :</label>
-					<input type="text" value="192.168.1.1" name="ip"/>
-					<input type="button" value="Tester" onclick="verifieIp()"/>
-				<br/>
-				<label style="width:150px;display:block;float:left">Contrôle IP :</label>
-					<input type="text" value="" name="result" disabled="disabled"/>
-			</form>
-			<script language="javascript" type="text/javascript">
-			verifieIp();
-			</script>
-			
-			
-			<form name="formu" id="formu" >
-				<textarea name="texte" cols=50 rows=10 onkeyup="init(this.value)" >Entrer du texte</textarea>
-				<br />
-				<input type="button" value="Voir" onclick="init(document.formu.texte.value)" />
-			</form>
-			<div id="voirtxt" style="position:absolute; left:460px; top:19px;
-			width:384px; height:179px; z-index:1; background-color: #FFFFFF; layer-
-			background-color: #FFFFFF; border: 1px none #000000;"></div>
-			<div id="boutons" style="position:absolute; left:460px; top:202px;
-			width:384px; height:18px; z-index:2" align="center">
-			</div>
-			
-			
-			
-			
-			
-			
-			<div id="palette" style="position:absolute;
-			     left:200px;
-			     top:0px;
-			     width:100px;
-			     height:300px;
-			     z-index:100;
-			     background-color: #CCCCFF;
-			     padding:10px;
-			     border:solid 1px black;
-			     text-align:center;" >
-				<span style="font-weight:bold;">Changer la couleur de fond</span>
-				<br /><br />
-				<span onclick="document.getElementById('palette').style.backgroundColor='red';" style="cursor:pointer">Rouge</span><br />
-				<span onclick="document.getElementById('palette').style.backgroundColor='green';" style="cursor:pointer">Vert</span><br />
-				<span onClick="document.getElementById('palette').style.backgroundColor='lightblue';" style="cursor:pointer">bleu</span><br />
-				<span onClick="document.getElementById('palette').style.backgroundColor='yellow';" style="cursor:pointer">Jaune</span><br />
-				<span onClick="document.getElementById('palette').style.backgroundColor='#FFCCFF';" style="cursor:pointer">Magenta</span><br />
-				<span onClick="document.getElementById('palette').style.backgroundColor='#CCFFFF';" style="cursor:pointer">Cyan</span><br />
-			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-	</body>
+    <head>
+        <title>Recherche</title>
+        <script language="javascript" type="text/javascript" src="lib/toolkit.js">
+        </script>
+        <script language="javascript" type="text/javascript" src="lib/affiche.js">
+        </script>
+        <script language="javascript" type="text/javascript" src="lib/menu.js">
+        </script>
+        <script language="javascript" type="text/javascript" src="lib/commande.js">
+        </script>
+        <style type="text/css" media="screen">
+            @import url("lib/style.css");
+        </style>
+    </head>
+    <body>
+        <script language="javascript" type="text/javascript">
+            affichePageBandeauHaut();
+            affichePageMenu("commande.htm");
+            affichePageTitre("commande.htm");
+            affichePagePied();
+        </script>
+        <div id="blockDroit">
+            <form>
+                <label style="width:150px;display:block;float:left">Date de commande :</label>
+                <script language="javascript" type="text/javascript">
+                    document.write(new Date().toLocaleString());
+                </script>
+                <br/>
+                <label style="width:150px;display:block;float:left">Adresse IP :</label>
+                <input type="text" value="192.168.1.1" name="ip"/>
+                <input type="button" value="Tester" onclick="verifieIp()"/>
+                <br/>
+                <label style="width:150px;display:block;float:left">Contrôle IP :</label>
+                <input type="text" value="" name="result" disabled="disabled"/>
+            </form>
+            <script language="javascript" type="text/javascript">
+                verifieIp();
+            </script>
+
+
+            <form name="formu" id="formu" >
+                <textarea name="texte" cols=50 rows=10 onkeyup="init(this.value)" >Entrer du texte</textarea>
+                <br />
+                <input type="button" value="Voir" onclick="init(document.formu.texte.value)" />
+            </form>
+            <div id="voirtxt" style="position:absolute; left:460px; top:19px;width:384px; height:179px; z-index:1; background-color: #FFFFFF; layer-background-color: #FFFFFF; border: 1px none #000000;"></div>
+            <div id="boutons" style="position:absolute; left:460px; top:202px;width:384px; height:18px; z-index:2" align="center">
+            </div>
+
+
+
+
+
+
+            <div id="palette" style="position:absolute;
+                 left:200px;
+                 top:0px;
+                 width:100px;
+                 height:300px;
+                 z-index:100;
+                 background-color: #CCCCFF;
+                 padding:10px;
+                 border:solid 1px black;
+                 text-align:center;" >
+                <span style="font-weight:bold;">Changer la couleur de fond</span>
+                <br /><br />
+                <span onclick="document.getElementById('palette').style.backgroundColor = 'red';" style="cursor:pointer">Rouge</span><br />
+                <span onclick="document.getElementById('palette').style.backgroundColor = 'green';" style="cursor:pointer">Vert</span><br />
+                <span onClick="document.getElementById('palette').style.backgroundColor = 'lightblue';" style="cursor:pointer">bleu</span><br />
+                <span onClick="document.getElementById('palette').style.backgroundColor = 'yellow';" style="cursor:pointer">Jaune</span><br />
+                <span onClick="document.getElementById('palette').style.backgroundColor = '#FFCCFF';" style="cursor:pointer">Magenta</span><br />
+                <span onClick="document.getElementById('palette').style.backgroundColor = '#CCFFFF';" style="cursor:pointer">Cyan</span><br />
+            </div>
+
+        </div>	
+    </body>
 </html>

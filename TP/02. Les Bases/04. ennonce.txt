@@ -35,7 +35,7 @@ Dans le fichier lib/affiche.js
 - créer une fonction affichePagePied() qui affiche le pied (<div id="pied">) comme précédement.
   Elle récupère les information sur le nom de l'auteur et le copyright dans le tableau "projet".
 
-Dans le fichier index.htm, remplacez la balise <div id="pied"> par un appel à la fonction affichePageTitre("index.htm") et testez votre affichage, rien ne doit avoir changé
+Dans le fichier index.htm, remplacez la balise <div id="pied"> par un appel à la fonction affichePagePied() et testez votre affichage, rien ne doit avoir changé
 
 Essayer de passer l'argument "recherche.htm" aux fonctions affichePageMenu() et affichePageTitre();
 votre contenu est dynamiquement généré par javascript.

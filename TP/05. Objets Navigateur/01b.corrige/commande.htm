@@ -45,10 +45,26 @@
                 <input type="button" value="Voir" onclick="init(document.formu.texte.value)" />
             </form>
             <div id="voirtxt" style="position:absolute; left:460px; top:19px; width:384px; height:179px; z-index:1; background-color: #FFFFFF; border: 1px none #000000;"></div>
-            <div id="boutons" style="position:absolute; left:460px; top:202px;
-                 width:384px; height:18px; z-index:2" align="center">
+            <div id="boutons" style="position:absolute; left:460px; top:202px;width:384px; height:18px; z-index:2" align="center">
 
             </div>
+
+
+
+
+
+            <hr>
+            <label>Votre recherche :</label>
+            <input type="text" value="asterix" name="queryBd" id="ajaxsearchQuery"/>
+            <input type="button" value="Lancer la recherche" id="ajaxsearchBtn"/>
+            <br/>
+            <div id="ajaxsearchResult"> </div>
+
+
+
+            <script language="javascript" type="text/javascript">
+                ajaxsearch.init();
+            </script>
 
         </div>
     </body>

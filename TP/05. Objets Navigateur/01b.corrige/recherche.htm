@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Recherche</title>
+		<script language="javascript" type="text/javascript" src="lib/toolkit.js">
+		</script>
+		<script language="javascript" type="text/javascript" src="lib/affiche.js">
+		</script>
+		<script language="javascript" type="text/javascript" src="lib/menu.js">
+		</script>
+		<script language="javascript" type="text/javascript" src="lib/bd.js">
+		</script>
+		<style type="text/css" media="screen">
+			@import url("lib/style.css");
+		</style>
+	</head>
+	<body>
+		<script language="javascript" type="text/javascript">
+			affichePageBandeauHaut();
+			affichePageMenu("recherche.htm");
+			affichePageTitre("recherche.htm");
+			affichePagePied();
+		</script>
+		<div id="blockDroit">
+			<script language="javascript" type="text/javascript">
+			stock = new stockBd();
+			bd1 = new ficheBd(1,'Lucky Luke -Ma Dalton', 'Morris/Goscinny', '1971', 'ancien',50,10);
+			stock.referencer(bd1);
+			stock.referencer(new ficheBd(2,'Lucky Luke - Les Dalton se rachetent', 'Morris/Goscinny', '1965', 'ancien',75,15));
+			stock.referencer(new ficheBd(3,'Lucky Luke -Le cuisinier français', 'Morris/Guylouis', '2003', 'ancien',20.15,50));
+			stock.referencer(new ficheBd(4,'Astérix le gaulois', 'Uderzo/Goscinny', '1961', 'ancien',1000,1));
+			stock.ajouter(5,'Astérix et les Goths', 'Uderzo/Goscinny', '1963', 'ancien',900,0);
+			stock.ajouter(6,'Tanguy et Laverdure à L\'ecole', 'Uderzo/Charlier', '1996', 'ancien',15,4);
+			stock.stocker(6,7);
+			stock.ajouter(7,'Blueberry - La tribu fantome', 'Giraud/Charlier', '1982', 'ancien',5,2);
+			stock.destocker(7,3);
+			stock.stocker(7,16);
+			stock.referencer(new ficheBd(8,'Largo Winch - La voie et la vertu', 'Van Hamme/Francq', '2008', 'ancien',25,50));
+
+			bd1.stocker(16);
+			bd1.destocker(13);
+			document.write(stock);
+
+			</script>
+		</div>
+	</body>
+</html>

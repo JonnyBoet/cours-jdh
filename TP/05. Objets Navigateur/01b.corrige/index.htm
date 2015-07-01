@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Accueil</title>
+		<script language="javascript" type="text/javascript" src="lib/toolkit.js">
+		</script>
+		<script language="javascript" type="text/javascript" src="lib/affiche.js">
+		</script>
+		<script language="javascript" type="text/javascript" src="lib/menu.js">
+		</script>
+		<style type="text/css" media="screen">
+			@import url("lib/style.css");
+		</style>
+	</head>
+	<body>
+		<script language="javascript" type="text/javascript">
+			affichePageBandeauHaut();
+			affichePageMenu("index.htm");
+			affichePageTitre("index.htm");
+			document.write(print_r(pagesDisponibles));
+			affichePagePied();
+		</script>
+		<div id="blockDroit">
+			<p>Ce site vous permet de consulter et commander parmis un stock de Bandes dessinées disponibles.</p>
+			<p>La rubrique <a href="recherche.htm">recherche</a> vous permet de consulter le catalogue des bandes dessinées disponibles.</p>
+			<p>En vous rendant dans notre espace <a href="commande.htm">commande</a> vous pourrez enregistrer votre selection dans un pannier d'achat.</p>
+			<script language="javascript" type="text/javascript">
+				document.write(print_r(pagesDisponibles));
+			</script>
+		</div>
+	</body>
+</html>
